@@ -1,0 +1,23 @@
+main {
+    display: flex;
+}
+
+section {
+    margin-top: 12px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: darkcyan;
+    padding: 10px;
+}
+
+.city-list-box {
+    margin-top: 5px;
+}
+
+.city-name {
+    width: 89%;
+}
+
