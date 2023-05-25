@@ -21,3 +21,96 @@ section {
     width: 89%;
 }
 
+.results-panel {
+    width: 75%;
+    padding-bottom: 10px;
+    visibility: hidden;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.current-conditions-panel {
+    border: 1px solid #c0c0c0;
+    border-right: none;
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+
+.name-block,
+.uv-index-block {
+    display: flex;
+    align-items: center;
+}
+
+#uv-index {
+    margin-left: 5px;
+    padding: 5px 10px;
+}
+
+.forecast-panel {
+    padding-top: 50px;
+}
+
+.container {
+    display: flex;
+}
+
+.card {
+    margin-bottom: 15px;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+}
+
+.card-header {
+    background-color: darkcyan;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card-body {
+    background-color: lightcyan;
+    padding: 10px;
+}
+
+/* Classes Added to Elements */
+
+.favorable {
+    background-color: green;
+    color: white;
+}
+
+.moderate {
+    background-color: yellow;
+    color: black;
+}
+
+.severe {
+    background-color: red;
+    color: white;
+}
+
+/* Viewport Styling */
+
+@media screen and (max-width: 575px) {
+    .search-panel {
+        width: 40%;
+    }
+
+    .search-button-panel {
+        margin-left: 0;
+    }
+
+    .search-panel h3 {
+        font-size: 15px;
+    }
+
+    .form-row {
+        display: block;
+        text-align: center;
+    }
+
+    .results-panel {
+        width: 60%;
+    }
+}
