@@ -144,3 +144,47 @@ function getListCity(coordinates) {
     }
   }
 
+
+// Converts a city string to title case
+function titleCase(city) {
+    var updatedCity = city.toLowerCase().split(" ");
+    var returnedCity = "";
+    for (var i = 0; i < updatedCity.length; i++) {
+      updatedCity[i] =
+        updatedCity[i][0].toUpperCase() + updatedCity[i].slice(1);
+      returnedCity += " " + updatedCity[i];
+    }
+    return returnedCity;
+  }
+  
+  // Converts a Unix timestamp to a formatted date string
+  function convertUnixTime(data, index) {
+    const dateObject = new Date(data.daily[index + 1].dt * 1000);
+    return dateObject.toLocaleDateString();
+  }
+  
+  // Event listener for the search button click
+  $("#search-button").on("click", function (e) {
+    e.preventDefault();
+    
+    // Executes the findCity function
+    findCity();
+    
+    // Resets the form
+    $("form")[0].reset();
+  });
+  
+  // Event listener for clicking a city in the city list
+  $(".city-list-box").on("click", ".city-name", function () {
+    // Retrieves the coordinates for the clicked city from the local storage
+    var coordinates = localStorage.getItem($(this)[0].textContent).split(" ");
+    coordinates[0] = parseFloat(coordinates[0]);
+    coordinates[1] = parseFloat(coordinates[1]);
+    
+    // Updates the city name and current date on the page
+    $("#city-name")[0].textContent =
+      $(this)[0].textContent + " (" + moment().format("M/D/YYYY") + ")";
+    
+    // Retrieves and updates the weather details for the clicked city
+    getListCity(coordinates);
+  });
